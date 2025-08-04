@@ -14,7 +14,8 @@ Experimental evaluations on benchmark problems demonstrate that DASE significant
 
 Please run the ''main\_SDDObench.py''
 
-## Citation
+# Citation
+If you find our SDDObench has given you some help, please cite it in your publications or projects:
 
 ```latex
 @article{zhong2025data,
