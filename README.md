@@ -6,7 +6,7 @@ To address this research gap, we propose DASE, a <u>D</u>rift-<u>A</u>ware <u>S<
 First, we introduce a hierarchical confidence drift detector that operates on a moving window over continuous data streams, identifying concept drifts by evaluating statistical deviations in model accuracy.
 Second, we propose a context-aware warm start mechanism that adaptively transfers knowledge from historical environments to the new environment using environmental similarity-based weighting.
 These dual innovations not only enables automatic segmentation of streaming data into coherence environments but also  enhances optimization performance with the real-time responsiveness.
-Experimental evaluations on benchmark problems demonstrate that DASE significantly outperforms state-of-the-art algorithms across various drift scenarios, establishing it as a powerful method for addressing challenges in continuously streaming environment.
+
 
 ![](DASE.png)
 
