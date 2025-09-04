@@ -1,8 +1,7 @@
-import numpy as np
 from archive import Window
 
 
-class DriftDetect:
+class HCDD:
     def __init__(self,beta):
         self.drift_statu=False
         self.drift_thres=None
@@ -26,7 +25,6 @@ class DriftDetect:
         self.l2_warn_thres=EW['mean']+2*EW['std']
         self.l1_warn_thres=EW['mean']+EW['std']
         self.l3_warn_thres=EW['mean']+3*EW['std']
-        # self.drift_thres=EW['mean']+3*EW['std']
 
         
         if CW['mean']+CW['std']>self.l1_warn_thres:

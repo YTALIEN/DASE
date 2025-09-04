@@ -1,3 +1,10 @@
+"""
+This is an example of how to use the SDDObench module
+Created by Yuanting Zhong on 2025-09-04.
+Copyright (c) 2025 SCUT. All rights reserved.
+Licensed under the MIT License.
+"""
+
 from SDDObench import *
 import numpy as np
 from tqdm import tqdm
@@ -13,7 +20,10 @@ num_peaks = 8
 
 config={
     'severity_h':0.5
-} # define your own benchmark configuration
+} 
+# define your own benchmark configuration
+# recommended parameters please visit https://github.com/LabGong/SDDObench
+
 user_config= Config(**config)
 
 
@@ -35,5 +45,5 @@ if __name__ == "__main__":
             for t in tqdm(range(T),desc=f'F{instance}/8 D{dfind}/5'):
                 params.update(x=X,change_count=t)
                 y,params= sddobench(params,config=user_config)
-                # print(f'instance: {instance}, dfind: {dfind}, t: {t} done!')
+            
 

@@ -1,11 +1,9 @@
 import numpy as np
 from sampling import rs
-from rbfn import RBFN
-from typing import Union,Callable
 
 
 
-def current_to_best_1(pop,lb,ub,f,max_iter,F=0.5,cr=0.5,real_func=None):
+def current_to_best_1(pop,lb,ub,f,max_iter,F=0.5,cr=0.5):
     n, d = pop.shape
 
     if isinstance(lb,np.ndarray):
@@ -39,11 +37,8 @@ def current_to_best_1(pop,lb,ub,f,max_iter,F=0.5,cr=0.5,real_func=None):
 
 
     pop=pop[np.argsort(y_pop),:]
-    if real_func is not None:
-        y_iter=real_func(iter_best)
-        return pop,iter_best,y_iter
-    else:
-        return pop,iter_best
+    
+    return pop,iter_best
 
 
 

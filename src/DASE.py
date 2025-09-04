@@ -1,9 +1,8 @@
 import DE
-from sampling import lhs,rs
+from sampling import lhs
 from archive import *
-from detector import DriftDetect
+from detector import HCDD
 from functools import partial
-from typing import Union
 from utils import remove_duplicate_data
 
 
@@ -33,7 +32,7 @@ def run(samples,
         CW=cur_window
 
     if detector is None:
-        detector = DriftDetect(beta=config['beta'])
+        detector = HCDD(beta=config['beta'])
 
 
     if true_drift is None:

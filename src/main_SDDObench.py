@@ -1,5 +1,10 @@
-import os
-import pandas as pd
+"""
+This is an example of how to use the DASE
+Created by Yuanting Zhong on 2025-09-04.
+Copyright (c) 2025 SCUT. All rights reserved.
+Licensed under the MIT License.
+"""
+
 from time import time
 from benchmark.SDDObench.SDDObench import *
 from benchmark.SDDObench.bench_config import Config
@@ -11,8 +16,11 @@ import warnings
 warnings.filterwarnings("ignore")
 
 
-config={} # define your own benchmark configuration
+config={} 
+# define your own benchmark configuration
+# recommended parameters please visit https://github.com/LabGong/SDDObench
 user_config= Config(**config)
+
 metric_flag=True # print the metric results
 MAX_RUN =20
 INST=[1,2,3,4,5,6,7,8]

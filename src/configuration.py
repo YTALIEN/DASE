@@ -49,10 +49,7 @@ def initial_parameters(**kw):
     config['d'] = 10 if config['d'] is None else config['d']
     config['mp'] = 1.0 / config['d']
     config['n'] = 6 * config['d']
-    # config['l1_warn_zone']=3*config['beta']
-    # config['l2_warn_zone']=2*config['beta']
-    # config['l3_warn_zone']=config['beta']    
-
+   
 
     if config['hidden_shape'] is None:
         config['hidden_shape'] = int(np.sqrt(config['n'])) 

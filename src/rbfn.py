@@ -43,18 +43,16 @@ class RBFN:
         elif basis_func == "inmultiquadratic":
             self.basis_func = lambda r: 1 / np.sqrt(r ** 2 + 1.)
         else:
-            # 默认高斯核
             self.basis_func = lambda r: np.exp(-0.5 * (r ** 2))
 
     def _calc_sigmas(self) -> np.ndarray:
         """
         compute the hyperparameter `sigma` of kernel function
         """
-        # equal to  c_=self.centers[:,np.newsaxis]
         c_ = np.expand_dims(self.centers, 1)
         ds = self.norm_func(c_ - self.centers)
         sigma = 2 * np.mean(ds, axis=1)
-        sigma = np.sqrt(0.5) / sigma # if sigma is too large, overfitting
+        sigma = np.sqrt(0.5) / sigma 
         return sigma
 
     def _calc_interpolation_mat(self, x: np.ndarray) -> np.ndarray:
@@ -78,7 +76,6 @@ class RBFN:
         tmp = self._calc_interpolation_mat(x)
         x_ = np.c_[np.ones(len(tmp)), tmp]
         y = y.reshape((-1, 1))
-        # 而 np.linalg.pinv(x)是x的伪逆矩阵
         self.w = np.linalg.pinv(x_) @ y
 
     def predict(self, x):
