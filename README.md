@@ -15,7 +15,7 @@ These dual innovations not only enables automatic segmentation of streaming data
 Please run the ''main\_SDDObench.py''
 
 # Citation
-If you find our SDDObench has given you some help, please cite it in your publications or projects:
+If you find our DASE has given you some help, please cite it in your publications or projects:
 
 ```latex
 @article{zhong2025data,
